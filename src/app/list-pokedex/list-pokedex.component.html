@@ -1,0 +1,23 @@
+<h1 class="ui header">Tu Pokédex</h1>
+<div class="container">
+  <div class="row">
+    <p>Aquí pondremos la búsqueda con filtro</p>
+  </div>
+
+  <div class="row">
+    <button class="ui labeled icon button" [routerLink]="['add']">
+      <i class="plus icon"></i>
+      Añadir Pokémon
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="ui cards">
+      <app-pokemon-item
+        *ngFor="let pokemon of pokemons"
+        [pokemon]="pokemon"
+        (pokemonRemoved)="removePokemon($event)">
+      </app-pokemon-item>
+    </div>
+  </div>
+</div>

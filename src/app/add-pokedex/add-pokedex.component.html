@@ -1,0 +1,21 @@
+<h1 class="ui header">Seleccionar Pokémon para tu Pokédex</h1>
+<div class="container">
+  <div class="row">
+      <app-search-box
+        (loading)="loading = $event"
+        (results)="updatePokemons($event)">
+      </app-search-box>
+  </div>
+
+  <div class="row">
+    <div class="ui cards">
+      <app-pokemon-item
+        *ngFor="let pokemon of pokemons"
+        [pokemon]="pokemon"
+        (pokemonAdded)="addPokemon($event)">
+      </app-pokemon-item>
+    </div>
+  </div>
+</div>
+
+

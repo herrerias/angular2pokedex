@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="right floated author">
+    <img class="ui avatar image" src="{{pokemon.pictureUrl}}">
+    <i class="right floated star icon"
+       *ngIf="pokemon.favorite"></i>
+  </div>
+  <div class="header">
+    {{pokemon.name}}
+  </div>
+  <div class="meta">
+    Todavía no sé
+  </div>
+  <div class="description">
+    {{pokemon.description}}
+    <app-pokemon-type
+      *ngFor="let type of pokemon.types"
+      [type]="type">
+    </app-pokemon-type>
+  </div>
+</div>
+<div class="extra content">
+    <span class="left floated remove" (click)="removePokemon()">
+      <i class="remove icon"></i>
+      Eliminar
+    </span>
+  <span class="right floated star" (click)="setFavorite()">
+      <i class="star icon"></i>
+      Favorito
+    </span>
+</div>
